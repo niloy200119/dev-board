@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blogs - DevBoard</title>
+  <link rel="shortcut icon" href="./assets/logo.png" type="image/x-icon">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.24/dist/full.min.css" rel="stylesheet" type="text/css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            "poppins": ["Poppins", "sans-serif"]
+          },
+          colors: {
+            "primary": "#3752fd",
+            "secondary": "#f4f7ff",
+            "dark": "#00303c"
+          }
+        }
+      }
+    }
+  </script>
+</head>
+
+<body class="font-poppins bg-secondary text-dark min-h-screen">
+  <div class="py-4 px-4 sm:px-6 lg:px-10 xl:px-14 2xl:px-20 container mx-auto">
+    <header class="bg-white rounded-xl py-1 px-4">
+      <nav class="navbar p-0 flex justify-between">
+        <div onclick="window.location.href='./index.html'">
+          <a class="btn btn-ghost text-2xl p-0"><img src="./assets/logo.png" loading="lazy" alt="Logo" class="w-10">
+            <div class="hidden sm:block">
+              <span class="font-light">Dev</span><span class="font-bold">Board</span>
+            </div>
+          </a>
+        </div>
+        <button id="desk-btn"
+          class="btn hover:opacity-80 complete-btn hover:bg-primary border-none bg-primary text-white font-normal h-10 min-h-9 px-4">Back
+          To Desk</button>
+      </nav>
+    </header>
+
+    <main>
+      <section>
+        <h2 class="text-center text-2xl font-bold mt-6 mb-4">Blogs</h2>
+        <!-- 1st Query -->
+        <div class="bg-white py-4 rounded-xl my-4">
+          <h4 class="text-lg font-semibold border-b border-dashed px-4 pb-3">Question-1: What are the different ways to select an element in the DOM?</h4>
+          <p class="px-4 pt-3 text-sm text-black opacity-60 leading-6">There are several ways to select elements in the DOM, each serving different use cases. The simplest method is <code>document.getElementById()</code>, which retrieves a single element by its unique ID. For selecting multiple elements with the same class, <code>document.getElementsByClassName()</code> returns a live HTMLCollection, while <code>document.getElementsByTagName()</code> does the same for elements with a specified tag name (e.g., <code>&lt;div&gt;</code> or <code>&lt;p&gt;</code>). For more advanced and flexible selections, <code>document.querySelector()</code> returns the first element matching a CSS selector (e.g., <code>&quot;.class&quot;</code>, <code>&quot;#id&quot;</code>, or <code>&quot;div &gt; p&quot;</code>), whereas <code>document.querySelectorAll()</code> returns a static NodeList of all matching elements, allowing for complex selections similar to CSS styling. These methods provide versatile ways to interact with DOM elements dynamically.
+        </p>
+          
+        </div>
+        <!-- 2nd Query -->
+        <div class="bg-white py-4 rounded-xl my-4">
+          <h4 class="text-lg font-semibold border-b border-dashed px-4 pb-3">Question-2: What is the difference between innerHTML, innerText and textContent?</h4>
+          <p class="px-4 pt-3 text-sm text-black opacity-60">
+            Here's a concise breakdown of the differences between innerHTML, innerText and textContent:</p>
+          <ol class="ml-8 text-sm text-black opacity-60 pr-4">
+            <li class="mt-2"><strong>innerHTML:</strong>
+              Gets or changes everything inside an element, including words and tags (like <code>&lt;b&gt;bold&lt;/b&gt;</code>). If you want to add new buttons or links, use this!
+            </li>
+            <li class="mt-2"><strong>innerText:</strong>
+              Only shows the words you can see on the screen. If something is hidden (like with display: none), it won't show up.
+            </li>
+            <li class="mt-2"><strong>textContent:</strong>
+              Gives you all the words inside an element, even if they're hidden. It doesn't care about tags (like <code>&lt;b&gt;bold&lt;/b&gt;</code>)—just plain text!
+            </li>
+          </ol>
+        </div>
+        <!-- 3rd Query -->
+        <div class="bg-white py-4 rounded-xl my-4">
+          <h4 class="text-lg font-semibold border-b border-dashed px-4 pb-3">Question-3: What is event delegation in the DOM?</h4>
+          <p class="px-4 pt-3 text-sm text-black opacity-60">Event delegation uses a single parent listener to handle events for multiple children by leveraging event bubbling. Instead of attaching listeners to each child, you check event.target to identify the source element. This improves performance and automatically works with dynamically added elements. It's ideal for lists, tables, and interactive UIs.</p>
+        </div>
+        <!-- 4th Query -->
+        <div class="bg-white py-4 rounded-xl my-4">
+          <h4 class="text-lg font-semibold border-b border-dashed px-4 pb-3">Question-4: What is event bubbling in the DOM?</h4>
+          <p class="px-4 pt-3 text-sm text-black opacity-60">Event bubbling in the DOM means that when an event (like a click) happens on an element, it first triggers on that element, then "bubbles up" through its parent elements all the way to the document root. This default behavior allows you to handle events efficiently—like listening for clicks on a parent element instead of each child—making it perfect for dynamic content and performance optimization. You can stop bubbling with event.stopPropagation() if needed, but most of the time, this upward flow simplifies event handling through delegation.</p>
+        </div>
+        <!-- 5th Query -->
+        <div class="bg-white py-4 rounded-xl mt-4">
+          <h4 class="text-lg font-semibold border-b border-dashed px-4 pb-3">Question-5: How do you create, add and remove elements using JavaScript?</h4>
+          <p class="px-4 pt-3 text-sm text-black opacity-60">In JavaScript, we can create an element with <code>document.createElement('div')</code>, add it to the DOM using methods like <code>parentElement.appendChild(newElement)</code> or <code>insertBefore()</code>, and remove elements with <code>parent.removeChild(child)</code> or the modern <code>child.remove()</code>.</p>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- JS part -->
+  <script src="./scripts/blogs.js"></script>
+</body>
+</html>
